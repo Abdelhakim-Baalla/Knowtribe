@@ -14766,6 +14766,24 @@
 					"name": "Login"
 				}
 			]
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAGUVkh9yjcOzB8=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model2",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAGUVkh9yzcPxOY=",
+					"_parent": {
+						"$ref": "AAAAAAGUVkh9yjcOzB8="
+					},
+					"name": "Diagram des Classes (Youdemy)"
+				}
+			]
 		}
 	]
 }
