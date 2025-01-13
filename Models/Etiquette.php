@@ -1,6 +1,6 @@
 <?php
 
-    class Etiquette{
+   abstract class Etiquette{
         private int $id;
         private string $nom;
         private string $description;
