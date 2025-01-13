@@ -14,3 +14,10 @@ CREATE TABLE tags(
     description TEXT,
     logo VARCHAR(225)
 )ENGINE=INNODB;
+
+CREATE TABLE roles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom  VARCHAR(35),
+    description TEXT,
+    logo VARCHAR(225)
+)ENGINE=INNODB;
