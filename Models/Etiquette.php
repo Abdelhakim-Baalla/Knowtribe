@@ -1,10 +1,10 @@
 <?php
 
    abstract class Etiquette{
-        private int $id;
-        private string $nom;
-        private string $description;
-        private string $logo;
+        protected int $id;
+        protected string $nom;
+        protected string $description;
+        protected string $logo;
 
         public function __construct(){}
 
@@ -28,22 +28,22 @@
             return $this->logo;
         }
 
-        public function setId($id)
+        public function setId(int $id)
         {
             $this->id = $id;
         }
 
-        public function setNom($nom)
+        public function setNom(string $nom)
         {
             $this->nom = $nom;
         }
 
-        public function setDescription($description)
+        public function setDescription(string $description)
         {
             $this->description = $description;
         }
 
-        public function setLogo($logo)
+        public function setLogo(string $logo)
         {
             $this->logo = $logo;
         }
