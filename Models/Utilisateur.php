@@ -1,6 +1,5 @@
 <?php
 
-    include 'Cour.php';
     include 'Role.php';
 
     class Utilisateur{

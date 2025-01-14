@@ -1,18 +1,17 @@
 <?php 
 
-    // include 'Tags.php';
-    // include 'Categories.php';
-    // include 'Enseignant.php';
-    // include 'Etudiant.php';
+    include 'Categories.php';
 
-    class Cour{
+    class Cours{
         private int $id;
         private string $titre;
         private string $description;
+        private Categorie $categorie;
+        private Utilisateur $enseignant;
         private  $tags = [];
-        private Categories $categorie;
-        private Enseignant $enseignant;
-        private $etudiant = [];
+        private $etudiants = [];
+
+        public function __construct(){}
 
 
         public function setId(int $id)
@@ -30,24 +29,25 @@
             $this->description = $description;
         }
 
+        public function setCtagorie(Categorie $categorie)
+        {
+            $this->categorie = $categorie;
+        }
+
+        public function setEnseignant(Utilisateur $enseignant)
+        {
+            $this->enseignant = $enseignant;
+        }
+
+        
         public function setTags(array $tags)
         {
             $this->tags = $tags;
         }
 
-        public function setCtagorie(Categories $categorie)
+        public function setEtudiant(array $etudiants)
         {
-            $this->categorie = $categorie;
-        }
-
-        public function setEnseignant(Enseignant $enseignant)
-        {
-            $this->enseignant = $enseignant;
-        }
-
-        public function setEtudiant(array $etudiant)
-        {
-            $this->etudiant = $etudiant;
+            $this->etudiants = $etudiants;
         }
 
         public function getId()
@@ -65,11 +65,6 @@
             return $this->description;
         }
 
-        public function getTags()
-        {
-            return $this->tags;
-        }
-
         public function getCategorie()
         {
             return $this->categorie;
@@ -80,14 +75,20 @@
             return $this->enseignant;
         }
 
+        public function getTags()
+        {
+            return $this->tags;
+        }
+
+
         public function getEtudiant()
         {
-            return $this->etudiant;
+            return $this->etudiants;
         }
 
         public function __toString()
         {
-            return "Id: " . $this->id . " Titre: " . $this->titre . " Description: " . $this->description . " Categorie: " . $this->categorie . " Enseignant: " . $this->enseignant .  " Tags : [" . implode(",", $this->tags)."]" . " Etudiants : [" . implode(",", $this->etudiant)."]" . " ";
+            return "Id: " . $this->id . " Titre: " . $this->titre . " Description: " . $this->description . " Categorie: " . $this->categorie . " Enseignant: " . $this->enseignant .  " Tags : [" . implode(",", $this->tags)."]" . " Etudiants : [" . implode(",", $this->etudiants)."]" . " ";
         }
     }
 ?>
