@@ -10,14 +10,57 @@
         private string$email;
         private string$password;
         private string$phone;
-        private $cours = [];
         private Role $role;
 
         public function __construct(){}
 
-        // public function  __call(){
-
-        // }
+        public function  __call($name, $arguments){
+            if($name == "creeUtilisateur"){
+                if(count($arguments) == 1){
+                    $this->id = $arguments[0];
+                } 
+                if(count($arguments) == 2){
+                    $this->id = $arguments[0];
+                    $this->nom = $arguments[1];
+                } 
+           
+                if(count($arguments) == 3){
+                    $this->id = $arguments[0];
+                    $this->nom = $arguments[1];
+                    $this->prenom = $arguments[2];
+                } 
+                if(count($arguments) == 4){
+                    $this->id = $arguments[0];
+                    $this->nom = $arguments[1];
+                    $this->prenom = $arguments[2];
+                    $this->email = $arguments[3];
+                }
+                if(count($arguments) == 5){
+                    $this->id = $arguments[0];
+                    $this->nom = $arguments[1];
+                    $this->prenom = $arguments[2];
+                    $this->email = $arguments[3];
+                    $this->password = $arguments[4];
+                }
+                if(count($arguments) == 6){
+                    $this->id = $arguments[0];
+                    $this->nom = $arguments[1];
+                    $this->prenom = $arguments[2];
+                    $this->email = $arguments[3];
+                    $this->password = $arguments[4];
+                    $this->phone = $arguments[5];
+                }
+                if(count($arguments) == 7){
+                    $this->id = $arguments[0];
+                    $this->nom = $arguments[1];
+                    $this->prenom = $arguments[2];
+                    $this->email = $arguments[3];
+                    $this->password = $arguments[4];
+                    $this->phone = $arguments[5];
+                    $this->role = $arguments[6];
+                }
+            }
+        }
 
         public function setId(int $id){
             $this->id = $id;
@@ -95,5 +138,5 @@
         
     }
 
-    
+   
 ?>

@@ -1,9 +1,9 @@
 <?php 
 
-    include 'Tags.php';
-    include 'Categories.php';
-    include 'Enseignant.php';
-    include 'Etudiant.php';
+    // include 'Tags.php';
+    // include 'Categories.php';
+    // include 'Enseignant.php';
+    // include 'Etudiant.php';
 
     class Cour{
         private int $id;

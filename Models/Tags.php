@@ -1,7 +1,7 @@
 <?php 
-    include 'Etiquette.php';
+    // include 'Etiquette.php';
 
-    class Tags extends Etiquette{
+    // class Tags extends Etiquette{
         
-    }
+    // }
 ?>
