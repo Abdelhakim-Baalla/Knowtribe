@@ -33,7 +33,7 @@
             $this->id = $id;
         }
 
-        public function setnom($nom)
+        public function setNom($nom)
         {
             $this->nom = $nom;
         }

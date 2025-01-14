@@ -1,5 +1,7 @@
 <?php
 
+    include 'Cour.php';
+    include 'Role.php';
 
     class Utilisateur{
         private int $id;
@@ -12,6 +14,10 @@
         private Role $role;
 
         public function __construct(){}
+
+        // public function  __call(){
+
+        // }
 
         public function setId(int $id){
             $this->id = $id;
