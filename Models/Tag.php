@@ -37,9 +37,9 @@
             }
         }
 
-        public function __tostring()
+        public function __toString()
         {
-            return parent::__tostring();
+            return parent::__toString();
         }
     }
 
