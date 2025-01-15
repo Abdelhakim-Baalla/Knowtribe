@@ -22,6 +22,24 @@
             $stmt->execute();
         }
 
+        // les fonctionnes de l'affichage
+        public function FindAll($tableName)
+        {
+            $query = "SELECT * FROM " . $tableName ;
+            $stmt = $this->connexion->connexion()->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
+
+            // foreach($row as $value)
+            // {
+
+            //     echo($value['id'] . '<br>');
+            //     echo($value['nom'] . '<br>');
+        
+            //     echo('<br>');
+            // }
+        }
+
         
     }
 
@@ -29,7 +47,7 @@
 
     // $nn = new CrudModels();
     // $tableName = 'roles';
-    // $names = ['nom' => "'Admin'", 'description' => "'This is admin'"];
-    // $nn->Create($tableName, $names);
+    // // // $names = ['nom' => "'Admin'", 'description' => "'This is admin'"];
+    // $nn->FindAll($tableName);
 
 ?>
