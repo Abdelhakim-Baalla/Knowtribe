@@ -14999,24 +14999,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGUXsbVBqTf7Lw=",
-											"_parent": {
-												"$ref": "AAAAAAGUVnB/Dzjy0Ik="
-											},
-											"model": {
-												"$ref": "AAAAAAGUXsbVAKTclCM="
-											},
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": 1253,
-											"top": 1488,
-											"width": 207,
-											"height": 13,
-											"text": "-cours: List <Cours>",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGUXxV0oRRLd5Y=",
 											"_parent": {
 												"$ref": "AAAAAAGUVnB/Dzjy0Ik="
@@ -15027,7 +15009,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1253,
-											"top": 1503,
+											"top": 1488,
 											"width": 207,
 											"height": 13,
 											"text": "-role: Roles",
@@ -15039,7 +15021,7 @@
 									"left": 1248,
 									"top": 1393,
 									"width": 217,
-									"height": 128
+									"height": 113
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -15063,7 +15045,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1253,
-											"top": 1526,
+											"top": 1511,
 											"width": 207,
 											"height": 13,
 											"text": "+creationDeCompte(): Utilisateur",
@@ -15073,7 +15055,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1248,
-									"top": 1521,
+									"top": 1506,
 									"width": 217,
 									"height": 23
 								},
@@ -17801,16 +17783,6 @@
 							"name": "phone",
 							"visibility": "private",
 							"type": "string"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGUXsbVAKTclCM=",
-							"_parent": {
-								"$ref": "AAAAAAGUVnB/DjjqkCI="
-							},
-							"name": "cours",
-							"visibility": "private",
-							"type": "List <Cours>"
 						},
 						{
 							"_type": "UMLAttribute",
