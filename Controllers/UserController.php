@@ -14,6 +14,11 @@
     {
        $this->user->findusers('utilisateur', $finder);
     }
+
+    public function Cree($names)
+    {
+       $this->user->creeusers('utilisateur', $names);
+    }
        
    }
 ?>
