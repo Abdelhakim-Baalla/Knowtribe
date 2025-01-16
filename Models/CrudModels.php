@@ -23,21 +23,19 @@
         }
 
         // les fonctionnes de l'affichage
-        public function FindAll($tableName)
+        public function FindAll($tableName, $finder)
         {
             $query = "SELECT * FROM " . $tableName ;
             $stmt = $this->connexion->connexion()->prepare($query);
             $stmt->execute();
             $row = $stmt->fetchAll();
 
-            // foreach($row as $value)
-            // {
+            foreach($row as $value)
+            {
+                echo('<div style= "font-family: monospace" >' . $value[$finder] . '</div>' . '<br>');
+            }
 
-            //     echo($value['id'] . '<br>');
-            //     echo($value['nom'] . '<br>');
-        
-            //     echo('<br>');
-            // }
+            
         }
 
         
