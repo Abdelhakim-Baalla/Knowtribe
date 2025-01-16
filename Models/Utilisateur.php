@@ -1,6 +1,7 @@
 <?php
 
     include 'Role.php';
+    include ("CrudModels.php");
 
     class Utilisateur{
         private int $id;
@@ -10,8 +11,11 @@
         private string$password;
         private string$phone;
         private Role $role;
+        private CrudModels $crudModels;
 
-        public function __construct(){}
+        public function __construct(){
+            $this->crudModels = new CrudModels();
+        }
 
         public function  __call($name, $arguments){
             if($name == "creeUtilisateur"){
@@ -59,6 +63,11 @@
                     $this->role = $arguments[6];
                 }
             }
+        }
+
+        public function findusers($nomtable, $finder)
+        {
+            $this->crudModels->FindAll($nomtable, $finder);
         }
 
         public function setId(int $id){
