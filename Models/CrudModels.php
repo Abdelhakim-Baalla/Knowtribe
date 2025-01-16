@@ -33,13 +33,23 @@
             foreach($row as $value)
             {
                 echo('<div style= "font-family: monospace" >' . $value[$finder] . '</div>' . '<br>');
-            }
+            } 
 
-            
+        }
+
+        public function DeleteWithId($tableName, $id)
+        {
+            $query = "DELETE FROM " . $tableName . " WHERE id = " . $id;
+            $stmt = $this->connexion->connexion()->prepare($query);
+            $stmt->execute();
+            // var_dump($stmt);
         }
 
         
     }
+
+
+
 
 
 
