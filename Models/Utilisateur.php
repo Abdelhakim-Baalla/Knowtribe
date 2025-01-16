@@ -75,6 +75,11 @@
             $this->crudModels->Create($tableName, $names);
         }
 
+        public function deleteusers($tableName, $id)
+        {
+            $this->crudModels->DeleteWithId($tableName, $id);
+        }
+
         public function setId(int $id){
             $this->id = $id;
         }
