@@ -19,6 +19,11 @@
     {
        $this->user->creeusers('utilisateur', $names);
     }
+
+    public function Delete($id)
+    {
+        $this->user->deleteusers('utilisateur', $id);
+    }
        
    }
 ?>
