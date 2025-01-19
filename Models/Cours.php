@@ -1,7 +1,7 @@
 <?php 
 
     include 'Categorie.php';
-    include 'Utilisateur.php';
+    include ("CrudModels.php");
 
     class Cours{
         private int $id;
@@ -11,8 +11,11 @@
         private Utilisateur $enseignant;
         private  $tags = [];
         private $etudiants = [];
+        private CrudModels $crudModels;
 
-        public function __construct(){}
+        public function __construct(){
+            $this->crudModels = new CrudModels();
+        }
 
         public function __call($name, $arguments) {
             if($name == "creeCours"){
