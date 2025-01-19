@@ -70,6 +70,11 @@
             $this->crudModels->FindAll($nomtable, $finder);
         }
 
+        public function findusersTodelete($nomtable)
+        {
+            $this->crudModels->FindAllTodelete($nomtable);
+        }
+
         public function creeusers($tableName, $names)
         {
             $this->crudModels->Create($tableName, $names);
