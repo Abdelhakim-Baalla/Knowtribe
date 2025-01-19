@@ -6,7 +6,7 @@
     <title>Youdemy</title>
     <!-- Google Fonts Links For Icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="shortcut icon" href="../Assest/Images/icon-book.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Assests/Images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="Assests/src/Css/index.css">
 
   </head>
