@@ -75,7 +75,7 @@ La plateforme vise à révolutionner l'apprentissage en ligne en offrant une int
 1. **Clonez le repository :**
 
    ```bash
-   git clone https://github.com/votre-utilisateur/youdemy.git
+   git clone https://github.com/Abdelhakim-Baalla/Youdemy.git
    cd youdemy
 
 2. **Configurez la base de données :**
