@@ -14,6 +14,16 @@
     {
        $this->user->findusers('utilisateur', $finder);
     }
+
+    public function Cree($names)
+    {
+       $this->user->creeusers('utilisateur', $names);
+    }
+
+    public function Delete($id)
+    {
+        $this->user->deleteusers('utilisateur', $id);
+    }
        
    }
 ?>
