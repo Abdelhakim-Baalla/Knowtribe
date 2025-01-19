@@ -32,3 +32,13 @@ CREATE TABLE utilisateur(
     role_id INT,
     FOREIGN KEY (role_id) REFERENCES roles(id)
 )ENGINE=INNODB;
+
+CREATE TABLE cours(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    titre VARCHAR(50),
+    description TEXT,
+    categorie_id INT,
+    tag_id INT,
+    FOREIGN KEY (categorie_id) REFERENCES categories(id),
+    FOREIGN KEY (tag_id) REFERENCES tags(id)
+)ENGINE=INNODB;

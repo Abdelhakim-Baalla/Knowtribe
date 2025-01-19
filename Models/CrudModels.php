@@ -25,6 +25,38 @@
         // les fonctionnes de l'affichage
         public function FindAll($tableName, $finder)
         {
+            $query = "SELECT * FROM " . $tableName;
+            $stmt = $this->connexion->connexion()->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
+
+            foreach($row as $value)
+            {
+                if($value[$finder] == 17) 
+                {
+                    $value[$finder] = "Admin";
+                }
+
+                if($value[$finder] == 18) 
+                {
+                    $value[$finder] = "Etudiant";
+                }
+
+                if($value[$finder] == 19) 
+                {
+                    $value[$finder] = "Enseignant";
+                }
+                
+                echo('<div style= "font-family: monospace">' . $value[$finder] . '</div>' . '<br>');
+                
+            } 
+
+        }
+
+
+
+        public function FindAllTodelete($tableName)
+        {
             $query = "SELECT * FROM " . $tableName ;
             $stmt = $this->connexion->connexion()->prepare($query);
             $stmt->execute();
@@ -32,10 +64,25 @@
 
             foreach($row as $value)
             {
-                echo('<div style= "font-family: monospace" >' . $value[$finder] . '</div>' . '<br>');
+                
+                echo('<option>' . $value['id'] . '</option>');
+                
             } 
-
         }
+
+        // public function FindRole($tableName, $finder)
+        // {
+        //     $query = "SELECT * FROM " . $tableName ;
+        //     $stmt = $this->connexion->connexion()->prepare($query);
+        //     $stmt->execute();
+        //     $row = $stmt->fetchAll();
+
+        //     foreach($row as $value)
+        //     {
+        //         echo('<div style= "font-family: monospace" >' . $value[$finder] . '</div>' . '<br>');
+        //     } 
+
+        // }
 
         public function DeleteWithId($tableName, $id)
         {
