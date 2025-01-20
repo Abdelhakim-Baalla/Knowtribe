@@ -1,6 +1,6 @@
 <?php 
-    include ("../Controllers/UserController.php");
-    $usercontroll = new UserController();
+    include ("../Controllers/CoursController.php");
+    $courscontroll = new CoursController();
     // $id = 4;
     // $usercontroll-> Delete($id);
 ?>
@@ -14,6 +14,54 @@
   <link rel="shortcut icon" href="../Assests/Images/logo.png" type="image/x-icon">
 </head>
 <body class="flex bg-gray-100 min-h-screen">
+<section class = " backdrop-blur-sm w-full absolute flex justify-center items-center h-screen hidden z-50" id = "formEnseigantPopup">
+                <form class="w-1/2 h-auto bg-gray-500 p-5 rounded-xl" action = "EnseignantDashboard.php" method = "post">
+                <div>
+                   <div class="mb-5">
+                <label for="titre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titre</label>
+                <input type="text" id="titre" name = "titre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                </div>
+                <div class="mb-5">
+                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                <input type="text" id="description" name = "description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                </div>
+                <div class="mb-5">
+                <label for="photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photo Url</label>
+                <input type="text" id="photo" name = "photo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                </div>
+                <div class="mb-5">
+                <label for="contenu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contenu</label>
+                <input type="text" id="contenu" name = "contenu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                </div>
+                <!-- <div class="mb-5">
+                <label for="categorie" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categorie</label>
+                <div class="w-full flex justify-center">
+                    <select name="categorie" id="categorie" class="w-[90%] rounded">
+                    <option value="Admin">Admin</option>
+                    <option value="Etudiant">Etudiant</option>
+                    <option value="Enseignant">Enseignant</option>
+                    </select>
+                </div> 
+                </div> -->
+
+                <!-- <div class="mb-5">
+                <label for="tags" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tags</label>
+                <div class="w-full flex justify-center">
+                    <select name="tags" id="tags" class="w-[90%] rounded">
+                    <option value="Admin">Admin</option>
+                    <option value="Etudiant">Etudiant</option>
+                    <option value="Enseignant">Enseignant</option>
+                    </select>
+                </div> 
+                </div> -->
+
+
+                </div>
+                <button type="submit" name = "ajouterFormBtnCours" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "ajouterBtnForm">Ajouter</button>
+                <button class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "annulerBtnFormCours">Annuler</button>
+                <!-- <button type="Ajoute" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajoute</button> -->
+                </form>
+            </section>
   <aside class="hidden sm:flex sm:flex-col">
     <a href="#" class="inline-flex items-center justify-center h-20 w-20 bg-purple-600 hover:bg-purple-500 focus:bg-purple-500">
       <svg fill="none" viewBox="0 0 64 64" class="h-12 w-12">
@@ -59,6 +107,7 @@
       </div>
     </div>
   </aside>
+  
   <div class="flex-grow text-gray-800">
     <header class="flex items-center h-20 px-6 sm:px-10 bg-white">
       <button class="block sm:hidden relative flex-shrink-0 p-2 mr-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 focus:bg-gray-100 focus:text-gray-800 rounded-full">
@@ -67,12 +116,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
         </svg>
       </button>
-      <div class="relative w-full max-w-md sm:-ml-2">
-        <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" class="absolute h-6 w-6 mt-2.5 ml-2 text-gray-400">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-        </svg>
-        <input type="text" role="search" placeholder="Quick Search" class="py-2 pl-10 pr-4 w-full border-4 border-transparent placeholder-gray-400 focus:bg-gray-50 rounded-lg" />
-      </div>
+      
       <div class="flex flex-shrink-0 items-center ml-auto">
         <button class="inline-flex items-center p-2 hover:bg-gray-100 focus:bg-gray-100 rounded-lg">
           <span class="sr-only">User Menu</span>
@@ -99,201 +143,45 @@
           <button class="relative p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 rounded-full">
             <span class="sr-only">Log out</span>
             <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-</svg>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
           </button>
         </div>
       </div>
     </header>
+    
     <main class="p-6 sm:p-10 space-y-6">
-      <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
-        <div class="mr-6">
-          <h1 class="text-4xl font-semibold mb-2">Welcome To Dashboard</h1>
-          <h2 class="text-gray-600 ml-0.5">We Provide Free resources regarding web design and web development</h2>
-        </div>
-        <div class="flex flex-wrap items-start justify-end -mb-3">
-          <button class="inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-            </svg>
-            Manage dashboard
-          </button>
-          <button class="inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 h-6 w-6 text-white -ml-1 mr-2">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-            Create new dashboard
-          </button>
-        </div>
-      </div>
-      <section class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-        <div class="flex items-center p-8 bg-white shadow rounded-lg">
-          <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-purple-600 bg-purple-100 rounded-full mr-6">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <div>
-            <span class="block text-2xl font-bold">89562</span>
-            <span class="block text-gray-500">Daily Unique Visitors</span>
-          </div>
-        </div>
-        <div class="flex items-center p-8 bg-white shadow rounded-lg">
-          <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-green-600 bg-green-100 rounded-full mr-6">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-          </div>
-          <div>
-            <span class="block text-2xl font-bold">27.6%</span>
-            <span class="block text-gray-500">CTR</span>
-          </div>
-        </div>
-        <div class="flex items-center p-8 bg-white shadow rounded-lg">
-          <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-red-600 bg-red-100 rounded-full mr-6">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
-            </svg>
-          </div>
-          <div>
-            <span class="inline-block text-2xl font-bold">3m 45s</span>
-            <span class="inline-block text-xl text-gray-500 font-semibold">(-32%)</span>
-            <span class="block text-gray-500">Average Engagement Time</span>
-          </div>
-        </div>
-        <div class="flex items-center p-8 bg-white shadow rounded-lg">
-          <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-blue-600 bg-blue-100 rounded-full mr-6">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <div>
-            <span class="block text-2xl font-bold">956326</span>
-            <span class="block text-gray-500">Event Count</span>
-          </div>
-        </div>
-      </section>
+     
+     
       <section class="flex flex-wrap gap-6">
-        <div class="flex flex-col md:col-span-2 md:row-span-2 bg-white shadow rounded-lg">
-          <div class="px-6 py-5 font-semibold border-b border-gray-100">Your insights will appear here soon.</div>
-          <div class="p-4 flex-grow">
-            <div class="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">Chart</div>
-          </div>
-        </div>
-        <div class="flex items-center p-8 bg-white shadow rounded-lg">
-          <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-yellow-600 bg-yellow-100 rounded-full mr-6">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-              <path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z" />
-              <path fill="#fff" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-            </svg>
-          </div>
-          <div>
-            <span class="block text-2xl font-bold">25</span>
-            <span class="block text-gray-500">Lections left</span>
-          </div>
-        </div>
-        <div class="flex items-center p-8 bg-white shadow rounded-lg">
-          <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-teal-600 bg-teal-100 rounded-full mr-6">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <span class="block text-2xl font-bold">139</span>
-            <span class="block text-gray-500">Hours spent on lections</span>
-          </div>
-        </div>
+       
         <div class="bg-white shadow rounded-lg w-full">
           <div class="flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100">
-            <span>Les Utilisateurs</span>
-            <section class = " backdrop-blur-sm w-full absolute flex justify-center items-center h-screen hidden " id = "formPopup">
-                <form class="w-1/2 h-auto bg-gray-500 p-5 rounded-xl" action = "AdminDashboard.php" method = "post">
-                <div>
-                   <div class="mb-5">
-                <label for="nom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom</label>
-                <input type="text" id="nom" name = "nom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <div class="mb-5">
-                <label for="prenom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prenom</label>
-                <input type="text" id="prenom" name = "prenom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <div class="mb-5">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                <input type="email" id="email" name = "email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <div class="mb-5">
-                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
-                <input type="text" id="phone" name = "phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <div class="mb-5">
-                <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
-                <div class="w-full flex justify-center">
-                    <select name="role" id="role" class="w-[90%] rounded">
-                    <option value="Admin">Admin</option>
-                    <option value="Etudiant">Etudiant</option>
-                    <option value="Enseignant">Enseignant</option>
-                    </select>
-                </div> 
-                </div>
-
-
-                </div>
-                <button type="submit" name = "ajouterFormBtn" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "ajouterBtnForm">Ajouter</button>
-                <button class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "annulerBtnForm">Annuler</button>
-                <!-- <button type="Ajoute" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajoute</button> -->
-                </form>
-            </section>
-
-
-           <?php 
-            $ajouterFormBtn = $_POST['ajouterFormBtn'];           
+            <span>Les Cours</span>
+            <?php 
+            $ajouterFormBtn = $_POST['ajouterFormBtnCours'];           
 
             if(isset($ajouterFormBtn))
             {
-                $nom = $_POST['nom'];
-                $prenom = $_POST['prenom'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $role = $_POST['role'];
+                $titre = $_POST['titre'];
+                $description = $_POST['description'];
+                $photo = $_POST['photo'];
+                $contenu = $_POST['contenu'];
 
-                if($role == 'Admin'){
-                    $role = 17;
-                }
-    
-                if($role == 'Etudiant'){
-                    $role = 18;
-                }
-    
-                if($role == 'Enseignant'){
-                    $role = 19;
-                } 
-
-                $int = random_int(1, 100);
-                $chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-                $string = str_shuffle($chars);
-                $mixed = $int . $string; 
-                $generatedPassword = substr($mixed,1,8); 
-
-                $names = ["nom" => "'$nom'", "prenom" => "'$prenom'", "email" => "'$email'", "password" => "'$generatedPassword'" , "phone" => "'$phone'" , "role_id" => "'$role'"];
-                $usercontroll->CreeUtilisateur($names);
-              
-
-            
-                unset($email);
+                $names = ["titre" => "'$titre'", "description" => "'$description'", "photo" => "'$photo'", "contenu" => "'$contenu'"];
+                $courscontroll->CreeCours($names);
              
             }
            ?>
-            <!-- Refer here for full dropdown menu code: https://tailwindui.com/components/application-ui/elements/dropdowns -->
           </div>
-          <div class="overflow-y-auto" style="max-height: 24rem;">
+          <div class="overflow-y-auto" >
             <div class = "ml-8">
-            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-2 py-2 text-center inline-flex gap-2 items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id = "ajouterUtilisateur">
+            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-2 py-2 text-center inline-flex gap-2 items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id = "ajouterCours">
               <svg width="10px" height="10px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000"><path d="M14 7v1H8v6H7V8H1V7h6V1h1v6h6z"/></svg>
                Ajouter
              </button>
 
-              <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-2 py-2 text-center inline-flex gap-2 items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id = "supprimmerUtilisateur">
+              <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-2 py-2 text-center inline-flex gap-2 items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id = "supprimmerCours">
               <svg fill="#000000" width="10px" height="10px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
                   Supprimer
               </button>
@@ -301,31 +189,11 @@
             </div>
             <ul class="p-6 space-y-6">
             <section class = "w-full flex">
-            <div class = "w-full px-2">
-            <table class="w-full text-sm text-left border border-gray-200">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                    <tr>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Id</th>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Nom</th>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Prenom</th>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Email</th>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Phone</th>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Role</th>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Delete</th>
-                   </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-white border-b">
-                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'id'; $usercontroll->Users($finder);?></td>
-                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'nom'; $usercontroll->Users($finder);?></td>
-                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'prenom'; $usercontroll->Users($finder);?></td>
-                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'email'; $usercontroll->Users($finder);?></td>
-                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'phone'; $usercontroll->Users($finder);?></td>
-                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'role_id'; $usercontroll->convertFkToRole($finder);?></td>
-                    </tr>
-                </tbody>
-           
-            </table>
+            <div class = "w-full px-2 ">
+            <div class="flex flex-wrap justify-center">
+            <?php $courscontroll->Cours(); ?>
+            </div>
+
 
 
             
@@ -336,7 +204,7 @@
         </div>
         
         <section class = " backdrop-blur-sm w-full absolute flex justify-center items-center h-screen hidden" id = "formSupprimmerPopup">
-                <form class="w-1/2 h-auto bg-gray-500 p-5 rounded-xl" action = "AdminDashboard.php" method = "post">
+                <form class="w-1/2 h-auto bg-gray-500 p-5 rounded-xl" action = "EnseignantDashboard.php" method = "post">
                 <div>
                    
                 <div class="mb-5">
@@ -345,8 +213,7 @@
                     <select name="utilisateurSupprimer" id="utilisateurSupprimer" class="w-[90%] rounded">
                     <option value="">Selectioner l'id de L'utilisateur</option>
                       <?php 
-                        
-                        echo  $usercontroll->deleteOption();
+                        echo  $courscontroll->deleteOption();
                       ?>
                       
                     </select>
@@ -358,7 +225,6 @@
 
                 </div>
                 <button type="submit" name = "supprimerBtnForm" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "supprimerBtnForm">Supprimer</button>
-                <!-- <button type="Ajoute" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajoute</button> -->
                 </form>
 
             </section>
@@ -369,7 +235,7 @@
                 if(isset($supprimerBtnForm))
                 {
                   $idToSupprimer = $_POST["utilisateurSupprimer"];
-                  $usercontroll->Delete($idToSupprimer);
+                  $courscontroll->Delete($idToSupprimer);
                   
                  
                 }
@@ -383,6 +249,6 @@
       </section>
     </main>
   </div>
-  <script src="../Assests/src/JS/admin.js"></script>
+  <script src = "../Assests/src/JS/enseignant.js" ></script>
 </body>
 </html>

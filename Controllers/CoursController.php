@@ -2,39 +2,36 @@
 <?php
     include ("../Models/Cours.php");
 
-   class UserController
+   class CoursController
    {
-    private Cours $user;
+    private Cours $cours;
     public $nom, $prenom, $email, $phone, $role;
 
     public function __construct()
     {
-        $this->user = new Utilisateur();
+        $this->cours = new Cours();
     }
 
-    public function Users($finder)
+    public function Cours()
     {
-       $this->user->findusers('utilisateur', $finder);
+       $this->cours->findcours('cours');
     }
 
     public function deleteOption()
     {
-        $this->user->findusersTodelete('utilisateur');
+        $this->cours->findcoursTodelete('cours');
     }
     
-    public function convertFkToRole($finder)
-    {
-       $this->user->findusers('utilisateur', $finder);
-    }
+   
 
-    public function CreeUtilisateur($names)
+    public function CreeCours($names)
     {
-       $this->user->creeusers('utilisateur', $names);
+       $this->cours->creecours('cours', $names);
     }
 
     public function Delete($id)
     {
-        $this->user->deleteusers('utilisateur', $id);
+        $this->cours->deleteCours('cours', $id);
     }
 
    }
