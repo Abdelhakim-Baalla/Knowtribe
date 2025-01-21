@@ -74,6 +74,26 @@
         }
 
 
+        public function findcours($nomtable)
+        {
+            $this->crudModels->FindCours($nomtable);
+        }
+
+        public function findcoursTodelete($nomtable)
+        {
+            $this->crudModels->FindAllTodelete($nomtable);
+        }
+
+        public function creecours($tableName, $names)
+        {
+            $this->crudModels->Create($tableName, $names);
+        }
+
+        public function deleteCours($tableName, $id)
+        {
+            $this->crudModels->DeleteWithId($tableName, $id);
+        }
+
         public function setId(int $id)
         {
             $this->id = $id;

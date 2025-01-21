@@ -1,13 +1,14 @@
-var formPopup = document.getElementById('formPopup');
+var formPopup = document.getElementById('formEnseigantPopup');
 var formSupprimerPopup = document.getElementById('formSupprimmerPopup');
 
 var ajouterBtnUtilisateur = document.getElementById('ajouterUtilisateur');
 var supprimerBtnUtilisateur = document.getElementById('supprimmerUtilisateur');
 
 var ajouterBtnForm = document.getElementById('ajouterBtnForm');
+var annulerBtnForm = document.getElementById('annulerBtnForm');
+
 var supprimerBtnForm = document.getElementById('supprimerBtnForm');
 
-var annulerBtnForm = document.getElementById('annulerBtnForm');
 
 
 
@@ -16,19 +17,12 @@ ajouterBtnUtilisateur.addEventListener("click", function(){
     
 });
 
+
 supprimerBtnUtilisateur.addEventListener("click", function(){
     formSupprimerPopup.style = 'display: flex;';
     
 });
 
-
-// ajouterBtnForm.addEventListener("click", function(){
-//     formPopup.style = 'display: none;';
-// });
-
-// supprimerBtnForm.addEventListener("click", function(){
-//     formSupprimerPopup.style = 'display: none;';
-// });
 
 annulerBtnForm.addEventListener("click", function(){
     document.getElementById("nom").value = " ";
