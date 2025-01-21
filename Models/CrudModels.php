@@ -96,11 +96,11 @@
             {
                 echo "<div class='w-full sm:w-full md:w-full lg:w-1/3 p-6'>
            <div class='bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300'>
-        <div class='relative'>
+           <div class='relative'>
             <!-- Smaller Image Section -->
             <img src='{$value['photo']}' alt='Course Image' class='object-cover w-full md:h-32 lg:h-40 rounded-t-xl'>
-        </div>
-        <div class='p-4'>
+          </div>
+          <div class='p-4'>
             <!-- Course Title -->
             <h3 class='text-lg font-semibold text-gray-800 mb-2'>{$value['titre']}</h3>
             <!-- Course Description -->
@@ -108,18 +108,15 @@
 
             <!-- Button Container with smaller buttons -->
             <div class='flex justify-center gap-2'>
-                <!-- Register Button -->
-                <a href='register.php?id={$value['id']}' class='bg-blue-600 text-white font-medium py-1 px-3 rounded-full hover:bg-blue-700 transition-all duration-300 text-sm'>
-                    Register
-                </a>
+                
                 <!-- Watch Video Button -->
                 <a href='watch_video.php?id={$value['id']}' class='bg-green-600 text-white font-medium py-1 px-3 rounded-full hover:bg-green-700 transition-all duration-300 text-sm'>
-                    Watch Video
+                    Regarder la Video
                 </a>
             </div>
-        </div>
-    </div>
-</div>";
+             </div>
+           </div>
+          </div>";
 
 
 
