@@ -79,6 +79,11 @@
             $this->crudModels->FindCours($nomtable);
         }
 
+        public function AfficherCoursDisponibles()
+        {
+            $this->crudModels->AfficherCoursDisponibles();
+        }
+
         public function findcoursTodelete($nomtable)
         {
             $this->crudModels->FindAllTodelete($nomtable);

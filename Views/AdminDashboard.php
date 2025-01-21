@@ -2,7 +2,7 @@
     include ("../Controllers/UserController.php");
     $usercontroll = new UserController();
      
-    $crudModels = new CrudModels();
+    
    
 
     // $id = 4;
@@ -18,84 +18,30 @@
   <link rel="shortcut icon" href="../Assests/Images/logo.png" type="image/x-icon">
 </head>
 <body class="flex bg-gray-100 min-h-screen">
-<section class = " backdrop-blur-sm w-full absolute flex justify-center items-center h-screen hidden z-50" id = "formEnseigantPopup">
-                <form class="w-1/2 h-auto bg-gray-500 p-5 rounded-xl" action = "EnseignantDashboard.php" method = "post">
-                <div>
-                   <div class="mb-5">
-                <label for="titre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titre</label>
-                <input type="text" id="titre" name = "titre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <div class="mb-5">
-                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                <input type="text" id="description" name = "description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <div class="mb-5">
-                <label for="photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photo Url</label>
-                <input type="text" id="photo" name = "photo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <div class="mb-5">
-                <label for="contenu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contenu</label>
-                <input type="text" id="contenu" name = "contenu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-                </div>
-                <!-- <div class="mb-5">
-                <label for="categorie" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categorie</label>
-                <div class="w-full flex justify-center">
-                    <select name="categorie" id="categorie" class="w-[90%] rounded">
-                    <option value="Admin">Admin</option>
-                    <option value="Etudiant">Etudiant</option>
-                    <option value="Enseignant">Enseignant</option>
-                    </select>
-                </div> 
-                </div> -->
 
-                <!-- <div class="mb-5">
-                <label for="tags" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tags</label>
-                <div class="w-full flex justify-center">
-                    <select name="tags" id="tags" class="w-[90%] rounded">
-                    <option value="Admin">Admin</option>
-                    <option value="Etudiant">Etudiant</option>
-                    <option value="Enseignant">Enseignant</option>
-                    </select>
-                </div> 
-                </div> -->
-
-
-                </div>
-                <button type="submit" name = "ajouterFormBtnCours" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "ajouterBtnForm">Ajouter</button>
-                <button class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "annulerBtnFormCours">Annuler</button>
-                <!-- <button type="Ajoute" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajoute</button> -->
-                </form>
-</section>
 
   <div class="flex-grow text-gray-800">
    
     <main class="p-6 sm:p-10 space-y-6">
       
-      
-      <section class="flex flex-wrap gap-6">
-       
-       
-        <div class="bg-white shadow rounded-lg w-full">
-          <div class="flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100">
-            <span>Les Utilisateurs</span>
-            <section class = " backdrop-blur-sm w-full absolute flex justify-center items-center h-screen hidden " id = "formPopup">
+    <section class = " backdrop-blur-sm w-full absolute flex justify-center items-center h-screen hidden " id = "formPopup">
                 <form class="w-1/2 h-auto bg-gray-500 p-5 rounded-xl" action = "AdminDashboard.php" method = "post">
                 <div>
                    <div class="mb-5">
                 <label for="nom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom</label>
-                <input type="text" id="nom" name = "nom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <input type="text" id="nom" name = "nom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  />
                 </div>
                 <div class="mb-5">
                 <label for="prenom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prenom</label>
-                <input type="text" id="prenom" name = "prenom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <input type="text" id="prenom" name = "prenom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  />
                 </div>
                 <div class="mb-5">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                <input type="email" id="email" name = "email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <input type="email" id="email" name = "email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  />
                 </div>
                 <div class="mb-5">
                 <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
-                <input type="text" id="phone" name = "phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <input type="text" id="phone" name = "phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  />
                 </div>
                 <div class="mb-5">
                 <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
@@ -111,10 +57,17 @@
 
                 </div>
                 <button type="submit" name = "ajouterFormBtn" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "ajouterBtnForm">Ajouter</button>
-                <button type="button"class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "annulerBtnForm">Annuler</button>
+                <button class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" id = "annulerBtnForm">Annuler</button>
                 <!-- <button type="Ajoute" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajoute</button> -->
                 </form>
             </section>
+      <section class="flex flex-wrap gap-6">
+       
+       
+        <div class="bg-white shadow rounded-lg w-full">
+          <div class="flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100">
+            <span>Les Utilisateurs</span>
+            
 
 
            <?php 
@@ -182,7 +135,8 @@
                         <th class="px-1 py-1 border-black border-solid border-[1px]">Email</th>
                         <th class="px-1 py-1 border-black border-solid border-[1px]">Phone</th>
                         <th class="px-1 py-1 border-black border-solid border-[1px]">Role</th>
-                        <th class="px-1 py-1 border-black border-solid border-[1px]">Delete</th>
+                        <th class="px-1 py-1 border-black border-solid border-[1px]">Role Demander</th>
+                        <th class="px-1 py-1 border-black border-solid border-[1px]">Status</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -193,6 +147,8 @@
                         <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'email'; $usercontroll->Users($finder);?></td>
                         <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'phone'; $usercontroll->Users($finder);?></td>
                         <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'role_id'; $usercontroll->convertFkToRole($finder);?></td>
+                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'role_demander'; $usercontroll->Users($finder);?></td>
+                        <td class="px-1 py-1 border-black border-solid border-[1px]"> <?php $finder = 'status'; $usercontroll->Users($finder);?></td>
                     </tr>
                 </tbody>
            
@@ -252,22 +208,7 @@
       </section>
 
       
-      <section class="flex flex-wrap gap-6">
-
-       <section class = " backdrop-blur-sm w-full absolute flex justify-center items-center h-screen hidden" id = "formSupprimmerPopup">
-               
-          </section>
-
-       <ul>
-            <section class ="bg-white shadow rounded-lg w-full">
-              <span class="pl-5">Les Cours</span>
-              <div class ="bg-white shadow rounded-lg w-full flex flex-wrap">
-                <?php $crudModels->FindCours('cours');?>
-              </div>
-              
-            </section>
-      </ul>
-     </section>
+     
 
     </main>
   </div>
