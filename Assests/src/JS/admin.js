@@ -1,4 +1,4 @@
-var formPopup = document.getElementById('formEnseigantPopup');
+var formPopup = document.getElementById('formPopup');
 var formSupprimerPopup = document.getElementById('formSupprimmerPopup');
 
 var ajouterBtnUtilisateur = document.getElementById('ajouterUtilisateur');

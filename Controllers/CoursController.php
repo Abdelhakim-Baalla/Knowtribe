@@ -16,6 +16,12 @@
     {
        $this->cours->findcours('cours');
     }
+ 
+    public function AfficherCoursDisponibles() {
+        $cours = $this->cours->AfficherCoursDisponibles();
+    }
+    
+
 
     public function deleteOption()
     {
