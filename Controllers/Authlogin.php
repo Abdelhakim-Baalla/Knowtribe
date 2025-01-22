@@ -8,17 +8,25 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/Youdemy/Models/CrudModels.php");
             $utilisateurData = new CrudModels();
             $utilisateur = $utilisateurData->loginByEmailAndPassword($email, $password);
             $_SESSION['id_user'] = $utilisateur['id'];
-            if($utilisateur['role_id'] == 17){
+            if($utilisateur['role_id'] == 17 && $utilisateur['status'] == 'Active'){
                 header("location: ../AdminDashboard.php?id={$_SESSION['id_user']}");
             } 
-            if ($utilisateur['role_id'] == 18){
+            if ($utilisateur['role_id'] == 18 && $utilisateur['status'] == 'Active'){
                 header("location: ../Etudiant.php?id={$_SESSION['id_user']}");
             }  
-            if ($utilisateur['role_id'] == 19){
+            if ($utilisateur['role_id'] == 19 && $utilisateur['status'] == 'Active'){
                 header("location: ../EnseignantDashboard.php?id={$_SESSION['id_user']}'");
             }
             if (empty($utilisateur['role_id']) || $utilisateur['status'] == 'Suspendu'){
                 header('location: ../compteSuspend.php');
+            }
+
+            if (empty($utilisateur['role_id']) || $utilisateur['status'] == 'Supprimer'){
+                header('location: ../compteSupprimer.php');
+            }
+
+            if (empty($utilisateur['role_id']) || $utilisateur['status'] != 'Supprimer' || $utilisateur['status'] != 'Suspendu' || $utilisateur['status'] != 'Active'){
+                header('location: ../Erreur404.php');
             }
         }
 

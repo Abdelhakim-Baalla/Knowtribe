@@ -142,9 +142,7 @@
                $stmt->execute();
                $row = $stmt->fetchAll();
 
-               if($row != 'null'){
-                echo 'noting';
-               }
+            
 
                $insertQuery = "INSERT INTO inscriptions (utilisateur_id, cours_id) VALUES (:utilisateur_id, :cours_id)";
                 $stmtInsert = $this->connexion->connexion()->prepare($insertQuery);
