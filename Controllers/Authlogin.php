@@ -1,5 +1,4 @@
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'] . "/Youdemy/Models/CrudModels.php");
 
     class Authlogin
@@ -8,14 +7,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/Youdemy/Models/CrudModels.php");
         public function login($email, $password){
             $utilisateurData = new CrudModels();
             $utilisateur = $utilisateurData->loginByEmailAndPassword($email, $password);
+            $_SESSION['id_user'] = $utilisateur['id'];
             if($utilisateur['role_id'] == 17){
-                header('location: ../AdminDashboard.php');
+                header("location: ../AdminDashboard.php?id={$_SESSION['id_user']}");
             } 
             if ($utilisateur['role_id'] == 18){
-                header('location: ../Etudiant.php');
+                header("location: ../Etudiant.php?id={$_SESSION['id_user']}");
             }  
             if ($utilisateur['role_id'] == 19){
-                header('location: ../EnseignantDashboard.php');
+                header("location: ../EnseignantDashboard.php?id={$_SESSION['id_user']}'");
             }
             if (empty($utilisateur['role_id']) || $utilisateur['status'] == 'Suspendu'){
                 header('location: ../compteSuspend.php');
