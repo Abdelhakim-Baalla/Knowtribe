@@ -88,9 +88,16 @@
         </form>
 
         <!-- Mot de passe oublié -->
-        <div class="mt-4 text-center">
+
+        <div class="mt-4 text-center flex justify-center gap-3">
+                <p class ="text-sm">Vous ne avait pas un compte? </p>
+                <a href="#" class="text-sm text-blue-600 hover:underline"> Inscrire Ici</a>
+            </div>
+            <div class="mt-4 text-center">
             <a href="#" class="text-sm text-blue-600 hover:underline">Mot de passe oublié ?</a>
-        </div>
+            </div>
+          
+        
     </div>
 
 </body>
