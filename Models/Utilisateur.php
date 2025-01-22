@@ -17,53 +17,7 @@
             $this->crudModels = new CrudModels();
         }
 
-        public function  __call($name, $arguments){
-            if($name == "creeUtilisateur"){
-                if(count($arguments) == 1){
-                    $this->id = $arguments[0];
-                } 
-                if(count($arguments) == 2){
-                    $this->id = $arguments[0];
-                    $this->nom = $arguments[1];
-                } 
-           
-                if(count($arguments) == 3){
-                    $this->id = $arguments[0];
-                    $this->nom = $arguments[1];
-                    $this->prenom = $arguments[2];
-                } 
-                if(count($arguments) == 4){
-                    $this->id = $arguments[0];
-                    $this->nom = $arguments[1];
-                    $this->prenom = $arguments[2];
-                    $this->email = $arguments[3];
-                }
-                if(count($arguments) == 5){
-                    $this->id = $arguments[0];
-                    $this->nom = $arguments[1];
-                    $this->prenom = $arguments[2];
-                    $this->email = $arguments[3];
-                    $this->password = $arguments[4];
-                }
-                if(count($arguments) == 6){
-                    $this->id = $arguments[0];
-                    $this->nom = $arguments[1];
-                    $this->prenom = $arguments[2];
-                    $this->email = $arguments[3];
-                    $this->password = $arguments[4];
-                    $this->phone = $arguments[5];
-                }
-                if(count($arguments) == 7){
-                    $this->id = $arguments[0];
-                    $this->nom = $arguments[1];
-                    $this->prenom = $arguments[2];
-                    $this->email = $arguments[3];
-                    $this->password = $arguments[4];
-                    $this->phone = $arguments[5];
-                    $this->role = $arguments[6];
-                }
-            }
-        }
+    
 
         public function findusers($nomtable, $finder)
         {

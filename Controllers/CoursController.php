@@ -20,6 +20,17 @@
     public function AfficherCoursDisponibles() {
         $cours = $this->cours->AfficherCoursDisponibles();
     }
+
+    public function inscrireEtudiantAuCours($utilisateur_id, $cours_id)
+    {
+        $this->cours->inscrireEtudiantAuCours($utilisateur_id, $cours_id);
+    }
+
+    public function mesCours($utilisateur_id, $cours_id)
+    {
+        $this->cours->mesCours($utilisateur_id, $cours_id);
+    }
+
     
 
 

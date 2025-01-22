@@ -52,7 +52,6 @@
       </div>
 
       <div class="flex flex-wrap">
-        <!-- Dynamically load available courses -->
         <?php
             $courscontroll->AfficherCoursDisponibles();
             
@@ -66,9 +65,9 @@
         <h2 class="text-2xl font-semibold text-gray-800">Mes Cours Inscrits</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="flex flex-wrap">
         <?php
-             
+              $courscontroll->mesCours($_GET['id_user'], $_GET['id']);
         ?>
       </div>
     </section>

@@ -1,28 +1,23 @@
 <?php
 session_start();
 
-// Assurez-vous que l'étudiant est connecté
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php"); // Redirige vers la page de connexion si l'utilisateur n'est pas connecté
+if (!isset($_GET['id'])) {
+    header("Location: auth/login.php");
     exit();
 }
+$_SESSION['id_cours'] = $_GET['id'];
+// echo $_SESSION['id_cours'];
+// echo $_SESSION['id_user'];
 
 include("../Controllers/CoursController.php");
 $courscontroll = new CoursController();
 
-// Vérifier si l'ID du cours est passé via l'URL
-if (isset($_GET['id'])) {
-    $cours_id = $_GET['id'];
-    $user_id = $_SESSION['user_id']; // ID de l'étudiant connecté
 
-    // Appel de la méthode pour inscrire l'étudiant au cours
-    $courscontroll->inscrireEtudiantAuCours($user_id, $cours_id);
+if (isset($_SESSION['id_cours'])) {
+    $cours_id = $_SESSION['id_cours'];
+    $utilisateur_id = $_SESSION['id_user'];
 
-    // Redirection vers le tableau de bord de l'étudiant
-    header("Location: dashboard.php"); // Changez cela si vous avez un autre fichier de tableau de bord
-    exit();
-} else {
-    // Si l'ID du cours n'est pas passé, redirigez l'utilisateur
-    header("Location: dashboard.php");
+    $courscontroll->inscrireEtudiantAuCours($utilisateur_id, $cours_id);
+
     exit();
 }
