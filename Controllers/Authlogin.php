@@ -25,9 +25,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/Youdemy/Models/CrudModels.php");
                 header('location: ../compteSupprimer.php');
             }
 
-            if (empty($utilisateur['role_id']) || $utilisateur['status'] != 'Supprimer' || $utilisateur['status'] != 'Suspendu' || $utilisateur['status'] != 'Active'){
-                header('location: ../Erreur404.php');
-            }
         }
 
         public function register($tableName, $names){
