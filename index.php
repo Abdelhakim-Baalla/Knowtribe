@@ -1,16 +1,3 @@
-<?php
-// Check if the request method is GET
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Return "Hello, World!" as a JSON response
-    header('Content-Type: application/json');
-    echo json_encode(['message' => 'Hello, World!']);
-} else {
-    // If the request method is not GET, return an error message
-    header('Content-Type: application/json');
-    echo json_encode(['error' => 'Invalid request method']);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,8 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <title>Youdemy</title>
     <!-- Google Fonts Links For Icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="shortcut icon" href="../Assests/Images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../Assests/src/Css/index.css">
+    <link rel="shortcut icon" href="Assests/Images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="Assests/src/Css/index.css">
 
   </head>
   <body>
