@@ -1,16 +1,3 @@
-<?php
-// Check if the request method is GET
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Return "Hello, World!" as a JSON response
-    header('Content-Type: application/json');
-    echo json_encode(['message' => 'Hello, World!']);
-} else {
-    // If the request method is not GET, return an error message
-    header('Content-Type: application/json');
-    echo json_encode(['error' => 'Invalid request method']);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
