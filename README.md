@@ -1,8 +1,8 @@
-# Youdemy - Plateforme de Cours en Ligne
+# Knowtribe - Plateforme de Cours en Ligne
 
 ## Description
 
-Youdemy est une plateforme de cours en ligne interactive qui permet aux étudiants et aux enseignants d'interagir de manière personnalisée. Le système propose un catalogue de cours riche, une gestion des utilisateurs basée sur des rôles (étudiant, enseignant, administrateur), et des fonctionnalités avancées comme des statistiques détaillées et des notifications. 
+Knowtribe est une plateforme de cours en ligne interactive qui permet aux étudiants et aux enseignants d'interagir de manière personnalisée. Le système propose un catalogue de cours riche, une gestion des utilisateurs basée sur des rôles (étudiant, enseignant, administrateur), et des fonctionnalités avancées comme des statistiques détaillées et des notifications. 
 
 La plateforme vise à révolutionner l'apprentissage en ligne en offrant une interface fluide, un suivi des performances, et une grande flexibilité d'utilisation.
 
