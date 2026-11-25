@@ -1,5 +1,11 @@
 # Knowtribe - Plateforme de Cours en Ligne
 
+[Espace étudiant en lecture seule](https://baalla-knowtribe-demo.abdelhakimbaalla50.workers.dev/etudiant)
+
+Les vues PHP et les requêtes de cours sont rendues à partir d’un jeu de données SQLite fictif.
+
+Pour reconstruire la démo depuis la racine du dépôt, exécuter `php demo/build.php`. Depuis la racine, `npx wrangler deploy` publie les fichiers générés.
+
 [Contrôleur de gestion des cours](https://github.com/Abdelhakim-Baalla/Knowtribe/blob/main/Controllers/CoursController.php)
 
 ## Description
